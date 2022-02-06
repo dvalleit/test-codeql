@@ -13,7 +13,7 @@ jobs:
       - name: Look for datadog configuration file
         run: |
           ls -lash
-          FILE=/datadog-rum.js
+          FILE=/src/datadog-rum.js
           if [ -f "$FILE" ]; then 
             echo "$FILE exists." 
           else 
