@@ -13,4 +13,4 @@ jobs:
       - name: Look for import
         run: |
           ls -lash
-          grep -r "import { datadogRum } from '@datadog/browser-ru';" ./*
+          grep -r "import { datadogRum } from '@datadog/browserx-rum';" ./*
