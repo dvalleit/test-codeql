@@ -1,1 +1,0 @@
-import { datadogRum } from '@datadog/browser-rum';
