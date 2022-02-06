@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './datadog-rum.js';
+import {initRum} from './datadog-rum.js';
 
-datadogRum();
+initRum();
 
 function Square(props) {
   return (
