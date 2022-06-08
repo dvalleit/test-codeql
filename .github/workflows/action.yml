@@ -1,0 +1,11 @@
+name: "Code Scanning - Action"
+
+on:
+  push:
+    branches: [master]
+jobs:
+  check-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        uses: echo "HOLA CLEVERS"
