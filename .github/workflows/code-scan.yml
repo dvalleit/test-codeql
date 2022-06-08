@@ -1,0 +1,33 @@
+name: "Code Scanning - Action"
+
+on:
+  push:
+    branches: [master]
+jobs:
+  check-code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Find all JS files and fail if found
+        uses: DovnarAlexander/github-action-file-detection@master
+        with:
+          wildcard: 'datadog-rum.js'
+          exit_code_found: 1
+          exit_code_not_found: 0
+        
+      - name: Look for datadog configuration file
+        run: |
+          ls -lash
+          FILE=src/datadog-rum.js
+          if [ -f "$FILE" ]; then 
+            echo "$FILE exists." 
+          else 
+            echo "$FILE doesn't exists."
+            exit 1  
+          fi
+
+      - name: Look for import
+        run: |
+          ls -lash
+          grep -r "import { datadogRum } from '@datadog/browser-rum';" ./*
