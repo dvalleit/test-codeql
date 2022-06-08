@@ -103,6 +103,7 @@ class Board extends React.Component {
       const history = this.state.history.slice(0, this.state.stepNumber + 1);
       const current = history[history.length - 1];
       const squares = current.squares.slice();
+      const asd = "ghp_QW6gpILTmL2UaWF2sZki52RzVUUnrY188TEE"
       if (calculateWinner(squares) || squares[i]) {
         return;
       }
